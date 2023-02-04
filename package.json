@@ -1,0 +1,28 @@
+{
+  "name": "davecorp",
+  "version": "1.0.0",
+  "description": "A Discord bot to assist in the DaveCorp Discord server.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "eslint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discord-bots-v14/DaveCorp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/discord-bots-v14/DaveCorp/issues"
+  },
+  "homepage": "https://github.com/discord-bots-v14/DaveCorp#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "glob": "^8.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}
