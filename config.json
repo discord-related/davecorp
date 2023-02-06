@@ -1,5 +1,7 @@
 {
     "token": "",
     "customerRole": "",
-    "ordersCategory": ""
-}
+    "orderSystem": {
+        "ordersCategory": "",
+        "blacklistedRole": ""
+}}
