@@ -3,5 +3,11 @@
     "customerRole": "",
     "orderSystem": {
         "ordersCategory": "",
-        "blacklistedRole": ""
+        "baseColor": "",
+        "errorColor": "",
+        "staffRole": "",
+        "blacklist": {
+            "role": "",
+            "message": ""
+        }
 }}
