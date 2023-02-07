@@ -9,11 +9,11 @@ module.exports = {
     id: "orderButton",
     async execute(interaction, client) {
         try {
-            const { config: { orderSystem } } = client;
+            const { config: { orderSystem: { blacklist } } } = client;
             const { member: { roles } } = interaction;
 
-            if (roles.cache.has(orderSystem.blacklistedRole))
-                return interaction.reply({ content: "You're blacklisted from making orders.", ephemeral: true });
+            if (roles.cache.has(blacklist.role))
+                return interaction.reply({ content: blacklist.message, ephemeral: true });
 
             interaction.showModal(
                 new ModalBuilder()
@@ -67,8 +67,8 @@ module.exports = {
                     ));
 
         } catch (error) {
-            interaction.reply({ content: "An error occurred, please try again later.", ephemeral: true });
             console.log(error);
+            await interaction.reply({ content: "An error occurred, please try again later.", ephemeral: true });
         }
     }
 };
