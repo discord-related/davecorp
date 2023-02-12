@@ -1,4 +1,7 @@
 const {
+    ActionRowBuilder,
+    ButtonBuilder,
+    ButtonStyle: { Danger },
     ChannelType: { GuildText },
     EmbedBuilder,
     MessageType: { ChannelPinnedMessage },
@@ -104,12 +107,22 @@ module.exports = {
                             }),
                         })
                         .setTimestamp(),
+                ], components: [
+                    new ActionRowBuilder()
+                        .setComponents(
+                            new ButtonBuilder()
+                                .setCustomId("closeOrder")
+                                .setLabel("Close")
+                                .setEmoji("🔒")
+                                .setStyle(Danger)
+                                .setDisabled(false)
+                        ),
                 ]
             }).then(async (message) => message.pin(`${user.username}'s order message.`));
 
             const collector = channel.createMessageCollector({
                 filter: message => message.type === ChannelPinnedMessage,
-                time: 5000, 
+                time: 5000,
             });
 
             collector.on("collect", async (message) => {
