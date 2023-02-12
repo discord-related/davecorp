@@ -3,7 +3,7 @@ async function loadEvents(client) {
 
     const { loadFiles } = require("../functions/fileLoader.js");
 
-    await client.events.clear();
+    await events.clear();
 
     const Files = await loadFiles("./src/components/events");
 
@@ -12,7 +12,7 @@ async function loadEvents(client) {
 
         const execute = (...args) => event.execute(...args, client);
         try {
-            client.events.set(event.name, execute);
+            events.set(event.name, execute);
         } catch (error) {
             console.log(error);
         }

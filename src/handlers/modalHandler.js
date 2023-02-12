@@ -9,7 +9,7 @@ async function loadModals(client) {
         const modal = require(file);
         if (!modal.id) return;
         try {
-            client.modals.set(modal.id, modal);
+            modals.set(modal.id, modal);
         } catch (error) {
             console.log(error);
         }
